@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Popup</title>
+
+    <link href="https://api.fontshare.com/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <style>
+        * { 
+            margin: 0;
+            padding: 0;
+        }
+
+        svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: #999;
+        }
+
+        svg path {
+            width: 12px;
+            height: 12px;
+        }
+
+        .success {
+            --bar-color: #10AC84;
+            --message-content: "Success";
+        }
+
+        .error {
+            --bar-color: #ee5253;
+            --message-content: "Error";
+        }
+
+        .message {
+            position: absolute;
+            width: 100vw;
+
+            background-color: #fff;
+
+            font-family: Satoshi;
+            font-weight: 700;
+
+            display: flex;
+            justify-content: space-between;
+
+            box-shadow: 0px 4px 9px -3px rgba(0,0,0,0.38);
+            -webkit-box-shadow: 0px 4px 9px -3px rgba(0,0,0,0.38);
+            -moz-box-shadow: 0px 4px 9px -3px rgba(0,0,0,0.38);
+        }
+
+        .message .color-bar {
+            width: 4px;
+            height: 90px;
+            background-color: var(--bar-color);
+        }
+
+        .message-content {
+            width: 100%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-left: 50px;
+            margin-right: 25px;
+        }
+
+        .message .message-content .message-text {
+            width: 80%;
+
+        }
+
+        .message .message-content .message-text .message-type {
+            color: #999;
+            font-weight: 500;
+        }
+
+        .message .message-content .message-text .message-type:after {
+            content: var(--message-content);
+        }
+
+        .message .message-content .message-text .message-description {
+            color: #555;
+            font-size: 1.2rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="message success">
+        <div class="color-bar"></div>
+
+        <div class="message-content">
+            <span class="message-text">
+                <p class="message-type"></p>
+                <p class="message-description">Password Changed</p>
+            </span>
+
+            <svg xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link href="https://api.fontshare.com/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <style>
+        * { 
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+        }
+
+        .page-title {
+            font-family: 'Satoshi', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #555555;
+
+            margin-left: 8%;
+            margin-top: 5%;
+        }
+
+        #signup-form {
+            padding: 15%;
+            margin-top: 10%;
+        }
+
+        .form-text-input {
+            width: 100%;
+
+            font-family: Satoshi;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #888888;
+        }
+        .form-text-input:first-of-type {
+            margin-bottom: 35%;
+        }
+
+
+        .form-text-input input {
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+
+            font-family: Satoshi;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #666;
+
+            border: 0;
+            border-bottom: 1px solid #999;
+
+            transition: width 1s;
+        }
+
+
+        .form-text-input input:focus {
+            outline-color: transparent;
+            outline-style: none;
+        }
+
+        .form-text-input input:focus~.focus-border {
+            transform: scaleX(1) translateY(-2px);
+            opacity: 1;
+        }
+
+        .focus-border {
+            background-color: #0ABDE3;
+            height: 2px;
+            width: 100%;
+            display: block;
+            transform: scaleX(0) translateY(-2px);
+            transform-origin: 0%;
+            opacity: 0;
+            transition: all 150ms linear;
+        }
+
+        #forgot-password {
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        #forgot-password a {
+            color: #999;
+            text-decoration: none;
+
+            font-family: Satoshi;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: #999999;
+        }
+
+        #forgot-password a:hover {
+            color: #666;
+        }
+
+        .btn {
+            position:absolute;
+            bottom:5%;
+            right: 15%;
+        }
+
+        .submit-active {
+            background-color: #fff;
+            border: 1px solid #10AC84;
+            border-radius: 5px;
+            padding: 1px 12px 4px 12px;
+
+            font-family: Satoshi;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: #10AC84;
+        }
+
+        .submit-inactive {
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            padding: 1px 12px 4px 12px;
+
+            font-family: Satoshi;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h3 class="page-title">Login</h3>
+
+        <div id="signup-form">
+            <form action="">
+                <div id="form-section-username" class="form-text-input">
+                    <label for="input-username">Username</label>
+                    <input type="text" name="username" id="input-username">
+                    <span class="focus-border"></span>
+                </div>
+
+                <div id="form-section-password" class="form-text-input">
+                    <label for="input-password">Password</label>
+                    <input type="password" name="password" id="input-password">
+                    <span class="focus-border"></span>
+                </div>
+
+                <div id="forgot-password">
+                    <a href="">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn submit-inactive">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

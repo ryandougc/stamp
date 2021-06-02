@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <link href="https://api.fontshare.com/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+
+    <style>
+        * { 
+            margin: 0;
+            padding: 0;
+
+            font-family: 'Satoshi', sans-serif;
+            font-style: normal;
+        }
+
+        svg {
+            stroke: #999;
+            fill: none;
+            height: 25px;
+            width: 25px;
+        }
+
+        #container {
+            width: 100%;
+        }
+
+        .page-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #555555;
+
+            margin-left: 8%;
+            margin-top: 5%;
+        }
+
+        #icon-bar {
+            margin-top: 15px;
+            padding: 8%;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #icon-bar #search {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+        }
+
+        #icon-bar .search-icon-unclicked {
+            border: 2px solid transparent;
+            background-color: transparent;
+            border-radius: 50px;
+            padding: 3px;
+            stroke: #999;
+            margin-right: 15px;
+        }
+
+        #icon-bar .search-icon-clicked {
+            border: 2px solid #0ABDE3;
+            background-color: #0ABDE3;
+            border-radius: 50px;
+            padding: 3px;
+            stroke: #fff;
+            margin-right: 15px;
+        }
+
+        #icon-bar #search-bar {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+        }
+
+        #icon-bar input {
+            display: block;
+            width: 100%;
+
+            font-family: Satoshi;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #666;
+
+            border: 0;
+            border-bottom: 1px solid #999;
+
+            transition: width 1s;
+        }
+
+        #icon-bar input:focus {
+            outline-color: transparent;
+            outline-style: none;
+        }
+
+        #icon-bar input:focus~.focus-border {
+            transform: scaleX(1) translateY(-2px);
+            opacity: 1;
+        }
+
+        #icon-bar .focus-border {
+            background-color: #0ABDE3;
+            height: 2px;
+            width: 100%;
+            display: block;
+            transform: scaleX(0) translateY(-2px);
+            transform-origin: 0%;
+            opacity: 0;
+            transition: all 150ms linear;
+        }
+
+        #icon-bar .close-search-icon,
+        #icon-bar .close-search-icon path {
+            transform: scale(0.8);
+        }
+
+        .user-ranking-card {
+            padding: 8% 8% 0 8%;
+
+            font-weight: normal;
+            font-size: 1.1rem;
+            color: #666;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .user-ranking-card .left-side-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-ranking-card .avatar {
+            width: 50px;
+            height: 50px; 
+
+            border-radius: 50px;
+
+            overflow: hidden;
+            
+            margin-right: 25px;
+        }
+
+        .user-ranking-card .avatar img {
+            width: 50px;
+        }
+
+        .user-ranking-card .metrics {
+            text-align: center;
+        }
+
+        .user-ranking-card .distance {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .you {
+            color: #FF9F43
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h3 class="page-title">Leaderboard</h3>
+
+        <div id="icon-bar">
+            <span id="search">
+                <svg class="search-icon-clicked" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+
+                <div id="search-bar">
+                    <div>
+                        <input type="text">
+                        <span class="focus-border"></span>
+                    </div>
+
+                    <svg class="close-search-icon" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </div>
+
+            </span>
+        
+            <svg xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        </div>
+       
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+        
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+
+        <div class="you user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+
+        <div class="user-ranking-card">
+            <span class="left-side-card">
+                <div class="avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png" alt="Avatar Placeholder" >
+                </div>
+                
+
+                <p class="username">Username</p>
+            </span>
+
+            <div class="metrics">
+                <p class="rank">#1</p>
+                <p class="distance">2834km</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
