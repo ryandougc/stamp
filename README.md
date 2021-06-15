@@ -20,7 +20,7 @@ Anyone interested in the nerdy details of the project, here you go.
 - Vue.js 3
 - JavaScript
 - Vite
-- Figma
+- Figma - [design](https://www.figma.com/file/PtIt0JsJ1W3LLoAvBDIL65/Stamp?node-id=0:1)
 
 ## Authors
 * [Ryan](https://ryancarr.ca "ryancarr.ca") - Creator
